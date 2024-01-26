@@ -1,0 +1,146 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    color: #393d41;
+    font-size: 1.2rem;
+    line-height: 1.65;
+    text-align: center;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+}
+
+
+.heading {
+    font-family: "Montserrat", sans-serif;
+    color: #25a2c3;
+    line-height: 1.5;
+}
+
+#banner {
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: 0;
+    padding: 50px;
+}
+
+h1 {
+    margin: 0;
+}
+
+#button {
+    background-color: #f04c2f;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    padding: 15px;
+    border-style: none;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+#button a:link,
+#button a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.work {
+    margin: 50px;
+}
+
+.work h2 {
+    margin-bottom: 5px;
+}
+
+.work p {
+    margin-top: 5px;
+}
+
+#notebook {
+    margin: 30px;
+    border-radius: 360px;
+}
+
+#quote {
+    background-color: #e22d0e;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#quote h3 {
+    font-size: 1.8rem;
+}
+
+#quote blockquote {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+#quote p {
+    margin-bottom: 5px;
+}
+
+#CEO {
+    font-size: 0.8rem;
+    margin-top: 0;
+}
+
+.box {
+    margin: 50px 30px 50px 30px;
+    border: 1px solid #dee1e3;
+    border-radius: 3px;
+    vertical-align: middle;
+    padding-bottom: 50px;
+}
+
+.box p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#footer {
+    background-color: #25a2c3;
+    color: #c8e7f0;
+    padding: 50px;
+}
+
+#footer h3 {
+    color: white;
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+}
+
+#footer a:link {
+    text-decoration: underline;
+}
+
+#footer a:link,
+a:visited {
+    color: #c8e7f0;
+
+}
+
+#address {
+    margin-top: 0;
+}
+
+hr {
+    width: 50%;
+    color: white;
+    border-style: solid;
+}
+
+#copy {
+    font-size: 1rem;
+}
