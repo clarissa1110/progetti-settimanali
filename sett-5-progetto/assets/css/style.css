@@ -17,14 +17,10 @@ header {
     box-shadow: 0px 1px 1px black;
     position: sticky;
     top: 0;
+    z-index: 999999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
-   
-
-
 
 }
 
@@ -206,6 +202,7 @@ hr {
     width: 65%;
     height: 100vh;
     overflow: auto;
+    scrollbar-width: none;
 }
 
 .newsArticle {
@@ -260,8 +257,6 @@ hr {
 aside {
     width: 35%;
     padding-left: 80px;
-    position: sticky;
-   
 }
 
 
@@ -275,11 +270,13 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     margin: 10px 0 15px 0;
+    position: sticky;
+    top: 85px;
 }
 
 .topics {
     margin: 5px;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid lightgray;
     color: grey;
     font-size: 0.8em;
@@ -288,7 +285,7 @@ h4 {
     align-items: center;
 }
 
-#footer {
+#infoContainer {
     display: flex;
     flex-wrap: wrap;
     margin: 15px 0;

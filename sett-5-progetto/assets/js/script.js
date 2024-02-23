@@ -1,10 +1,13 @@
-
-
 let header = document.getElementById('header');
-let heroHeight = document.getElementById('hero');
+let heroHeight = header.offsetTop;
+
 
 function cambiaColore() {
-    if (window.scrollY >= heroHeight.offsetHeight) {
+    if (window.scrollY >= heroHeight) {
         header.style.backgroundColor('white')
+    } else {
+        header.style.backgroundColor('#ffc017')
+    }
 }
-}
+
+cambiaColore();
