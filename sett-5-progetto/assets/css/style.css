@@ -266,12 +266,15 @@ h4 {
     margin: 0 5px;
 }
 
+#discover {
+    position: sticky;
+    top: 100px;
+}
+
 #discoverContainer {
     display: flex;
     flex-wrap: wrap;
     margin: 10px 0 15px 0;
-    position: sticky;
-    top: 85px;
 }
 
 .topics {
