@@ -21,7 +21,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 nav {
@@ -50,9 +49,7 @@ nav div {
 
 .buttonScroll {
     background-color: #1a8917;
-    color: white;
 }
-
 
 
 
@@ -209,6 +206,7 @@ hr {
     display: flex;
     align-items: center;
     height: 150px;
+    margin-bottom: 10px;
 }
 
 .newsText {
@@ -233,7 +231,6 @@ hr {
     height: 25px;
     padding: 0 10px;
     border-radius: 30px;
-
 }
 
 .newsImg {
@@ -293,7 +290,6 @@ h4 {
     flex-wrap: wrap;
     margin: 15px 0;
 }
-
 
 .info {
     margin: 5px;
