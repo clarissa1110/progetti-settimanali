@@ -1,0 +1,1 @@
+let rowDetails = document.getElementById('rowDetails');
