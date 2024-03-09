@@ -17,7 +17,9 @@
     </header>
 
     <main class="p-5">
-        <div id="backTitle"></div>
+        <div>
+            <h1 id="backTitle"></h1>
+        </div>
         <hr>
         <form>
             <label for="inputName" class="fw-semibold">Nome</label>
@@ -35,9 +37,12 @@
             <label for="inputDescription" class="fw-semibold">Descrizione prodotto</label>
             <textarea id="inputDescription" class="w-100 mb-3" required></textarea>
 
-            <div class="d-flex w-100 justify-content-end">
-                <button id="btnReset" class="btn btn-light border-1 border-black w-25">Reset</button>
-                <button id="btnSave" type="reset" class="btn btn-warning w-25 ms-3">Save</button>
+            <div class="d-flex w-100 justify-content-between">
+                <button id="btnDelete" class="btn btn-danger w-25">Elimina</button>
+                <div class="w-100 d-flex justify-content-end">
+                    <button id="btnReset" class="btn btn-light border-1 border-black w-25">Reset</button>
+                    <button id="btnSave" type="reset" class="btn btn-warning ms-3 w-25">Salva</button>
+                </div>
             </div>
         </form>
 

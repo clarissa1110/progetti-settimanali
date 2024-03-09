@@ -2,7 +2,7 @@ let productList = [];
 let noItems = document.getElementById('noItems');
 let cards = document.getElementById('cards');
 let myURL = "https://striveschool-api.herokuapp.com/api/product/"
-let key = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBhMTJkN2IxMTAwMTkwZTcwZDkiLCJpYXQiOjE3MDk4OTU4NDIsImV4cCI6MTcxMTEwNTQ0Mn0.WDyqLwGo3xmJX2tkJfnvYqQ1CLfwwTDC1UDAuRSHeVM"
+const key = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBhMTJkN2IxMTAwMTkwZTcwZDkiLCJpYXQiOjE3MTAwMDg1MDgsImV4cCI6MTcxMTIxODEwOH0.1tVkkilUAEJyc017bFE9S882XV8PhLqbgSkMXe4ClYE"
 
 window.addEventListener('load', init);
 
@@ -14,6 +14,7 @@ async function getProducts() {
     try {
         let get = await fetch (myURL, {
             headers: {
+                'Content-Type' : 'application/json',
                 'Authorization' : key,
             }
         });
@@ -28,7 +29,7 @@ async function getProducts() {
             return;
         }
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
@@ -40,12 +41,12 @@ const printProduct = () => {
         card.innerHTML = `
         <img src="${element.imageURL}" class="card-img-top">
         <div class="card-body">
-            <h5 class="card-title">${element.productName}</h5>
+            <h5 class="card-title">${element.name}</h5>
             <p class="card-text">${element.description}</p>
-            <a href="back.html?id=${element._id}" class="btn btn-warning">Modifica</a>
-            <a href="detail.html?id=${element._id}" class="btn btn-info">Scopri di più</a>          
-        `;
-        
-    })
-}
+            <a href="back.html?id=${element.id}" class="btn btn-warning">Modifica</a>
+            <a href="details.html?id=${element.id}" class="btn btn-info">Scopri di più</a>  
+        </div>`;
+        cards.appendChild(card);
+    });
+};
 
