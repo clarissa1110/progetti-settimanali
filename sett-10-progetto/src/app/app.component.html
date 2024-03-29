@@ -1,0 +1,12 @@
+<header>
+  <h1>Hey Boss, what's my task for the day?</h1>
+
+  <nav>
+    <a [routerLink]="['/completed-tasks']" routerLinkActive="router-link-active" class="btn btn-primary me-2">See how much we've accomplished!</a>
+    <a [routerLink]="['/tasks-left']" routerLinkActive="router-link-active" class="btn btn-primary me-2">What's left?</a>
+    <a [routerLink]="['/users']" routerLinkActive="router-link-active" class="btn btn-primary me-2">By user</a>
+    <a [routerLink]="['/']" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-primary me-2">See all</a>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row mb-2" *ngFor="let task of tasks">
+       <span *ngIf="task.completed" class="bg-success-subtle">
+        <div class="col-12">            
+            <h4>{{task.todo}}</h4>
+            <p>Assigned to: {{user.firstName}} {{user.lastName}}</p>
+        </div>
+        </span>    
+        <span *ngIf="!task.completed" class="bg-danger-subtle">
+            <div class="col-12">            
+                <h4>{{task.todo}}</h4>
+                <p>Assigned to: {{user.firstName}} {{user.lastName}}</p>
+            </div>
+            </span>        
+    </div>
+</div>

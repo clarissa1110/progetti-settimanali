@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row" *ngFor="let user of users">
+        <div class="col-4">
+            <img src={{user.image}}  alt="user avatar">
+        </div>
+        <div class="col-8">
+            <div>
+                <h4>{{user.firstName}} {{user.lastName}}</h4>
+                <p>{{user.title}}</p>
+            </div>
+            <div *ngFor="let task of taskUser">
+                <p>{{task.todo}}</p>
+            </div>
+        </div>
+    </div>
+</div>
