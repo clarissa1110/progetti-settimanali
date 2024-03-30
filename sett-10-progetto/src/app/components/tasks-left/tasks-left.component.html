@@ -1,6 +1,8 @@
 <div class="container">
-    <div class="row mb-2" *ngFor="let task of tasks">
-        <div class="col-12 bg-danger-subtle">            
+    <div class="row mb-2" *ngFor="let task of tasks; let i = index">
+        <div class="col-12 bg-danger-subtle"> 
+            <input type="checkbox" id="notComplTask" (click)="notCompletedTasks(task.id, i)">
+            <label for="notComplTask">Completato</label>           
             <h4>{{task.todo}}</h4>
             <p>Assigned to: {{task.userId}}</p>
         </div>               

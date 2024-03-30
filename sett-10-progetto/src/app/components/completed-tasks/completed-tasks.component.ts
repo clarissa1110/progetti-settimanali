@@ -17,4 +17,9 @@ async ngOnInit(): Promise<void> {
  this.tasks = tasks.filter(task => task.completed === true)
 }
 
+completedTasks(id: number, index: number) {
+  this.taskSrv.updateTask(id, {completed: false})
+  this.tasks.splice(index, 1);
+}
+
 }

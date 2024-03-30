@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { Task } from '../models/task.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TasksService {
-
   tasks: Task[] = [
     {
       id: 1,
@@ -908,15 +907,20 @@ export class TasksService {
       userId: 32,
     },
   ];
-  
 
-  constructor() { }
+  constructor() {}
 
   getTasks() {
-    return this.tasks
+    return this.tasks;
   }
 
   getTask(id: number) {
-    return this.tasks.find((task) => task.id === id)
+    return this.tasks.find((task) => task.id === id);
+  }
+
+  updateTask(id: number, data: Partial<Task>) {
+    this.tasks = this.tasks.map((task) =>
+      task.id === id ? { ...task, ...data } : task
+    );
   }
 }
