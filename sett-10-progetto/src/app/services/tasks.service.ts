@@ -915,7 +915,7 @@ export class TasksService {
   }
 
   getTask(id: number) {
-    return this.tasks.find((task) => task.id === id);
+    return this.tasks.find((user) => user.id === id);
   }
 
   updateTask(id: number, data: Partial<Task>) {

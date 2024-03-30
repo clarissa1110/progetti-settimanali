@@ -12,7 +12,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class UsersComponent {
   users!: User[];
   tasks!: Task[];
-  taskUser: Task[] = []
+  taskUser!: Task[]
  
 
   constructor(private taskSrv: TasksService, private userSrv: UsersService) {
@@ -23,8 +23,10 @@ export class UsersComponent {
     this.users = this.userSrv.users;
     console.log(this.users);
 
-//     this.users.forEach((user) => {this.taskUser = this.tasks.filter(task => task.userId === user.id) 
-// })
+    this.users.forEach((user) => {this.taskUser = this.tasks.filter(task => task.userId === user.id) 
+      console.log(this.taskUser);
+    
+})
 
 
   }
