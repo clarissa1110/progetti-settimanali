@@ -1,18 +1,26 @@
-<div class="container">
-    <div class="row" *ngFor="let user of users">
-        <div class="col-4">
-            <img src={{user.image}}  alt="user avatar">
-        </div>
-        <div class="col-8">
-            <div>
-                <h4>{{user.firstName}} {{user.lastName}}</h4>
-                <p>{{user.title}}</p>
-            </div>
-            <div>
-                <p>{{taskUser}}</p>
-            </div>
-        </div>
+<div class="container mt-4">
+  <div
+    class="row mb-2 border border-1 border-secondary-subtle rounded-2"
+    *ngFor="let user of users; let i = index"
+  >
+    <div class="col-4">
+      <img src="{{ user.image }}" alt="user avatar" class="img-fluid" />
     </div>
+    <div class="col-8">
+      <div class="d-flex flex-column py-2">
+        <h4 class="mb-0">{{ user.firstName }} {{ user.lastName }}</h4>
+        <p class="mb-0 text-secondary">{{ user.title }}</p>
+      </div>
+      <div>
+        <div class="container ps-0">
+          <h5>{{ user?.firstName }}'s tasks:</h5>
+          <div *ngFor="let task of taskUser; let i = index">
+            <p>
+              {{ task.todo }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<!--  -->

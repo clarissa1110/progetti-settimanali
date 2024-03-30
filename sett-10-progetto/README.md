@@ -1,27 +1,8 @@
-# Sett10Progetto
+# Progetto settimanale - settimana 10 - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+Al caricamento della pagina, la prima sezione che si carica raccoglie tutti i task, sia quelli già eseguiti, sia quelli ancora da compiere. Cliccando sulla checkbox il task scompare e viene mandato nella pagina dei task completati - se era precedentemente incompiuto - e viceversa nella pagina dei task incompiuti se era inizialmente completato.
 
-## Development server
+Lo stesso avviene nelle rispettive pagine "see how much we've accomplished" e "what's left"; il cambiamento avviene in tempo reale.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A causa di un problema che non sono stata in grado di risolvere nonostante i numerosi e diversi tentativi, non ho potuto "mettere in comunicazione" le due basi dati, quindi in ogni pagina la sezione "assigned to" del task presenta o il nome di un utente - sempre lo stesso - oppure l'id dell'utente piuttosto che il nome. 
+Per lo stesso problema, nella pagina dedicata agli utenti sono riuscita a far ciclare e apparire ciascun utente, ma non i suoi task; questi tuttavia vengono mostrati ordinatamente in console, divisi in base all'utente, tramite il log di taskUser.

@@ -11,22 +11,22 @@ import { User } from './models/user.interface';
 
 const routes: Route[] = [
   {
-    path:'',
-    component: AllTasksComponent
+    path: '',
+    component: AllTasksComponent,
   },
   {
-    path:'completed-tasks',
-    component: CompletedTasksComponent
+    path: 'completed-tasks',
+    component: CompletedTasksComponent,
   },
   {
     path: 'tasks-left',
-    component: TasksLeftComponent
+    component: TasksLeftComponent,
   },
   {
     path: 'users',
-    component: UsersComponent
-  }
-]
+    component: UsersComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -34,13 +34,10 @@ const routes: Route[] = [
     CompletedTasksComponent,
     TasksLeftComponent,
     AllTasksComponent,
-    UsersComponent
+    UsersComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

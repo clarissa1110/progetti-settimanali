@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
   users: User[] = [
@@ -807,14 +807,14 @@ export class UsersService {
       title: 'VP Sales',
     },
   ];
-  
-  constructor() { }
+
+  constructor() {}
 
   getUsers() {
-    return this.users
+    return this.users;
   }
 
   getUser(id: number) {
-    return this.users.find((user) => user.id === id)
+    return this.users.find((user) => user.id === id);
   }
 }
