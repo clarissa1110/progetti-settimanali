@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="text-center">Users</h2>
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let user of users; let i = index">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>Name: {{user.name}}</h5>
+              <p>Email: {{user.email}}</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container">
+  <h2 class="text-center">All Our Movies</h2>
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let movie of movies; let i = index">
+        <div class="col-3">
+          <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-img-top" alt="movie poster"/>
+            <div class="card-body">
+              <h5 class="card-title">{{movie.title}}</h5>
+              <a  class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+              </svg></a>
+            </div>
+
+            <!-- <app-post-card [post]="post" class="bg-success">
+                            <button
+                                type="button"
+                                class="btn btn-primary btn-sm"
+                                (click)="disablePost(post.id, i)"
+                            >
+                                DISATTIVA
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-secondary ms-1 btn-sm"
+                                [routerLink]="['/activePosts', post.id]"
+                            >
+                                DETTAGLI
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn-primary btn-sm"
+                                (click)="deletePost(post.id, i)"
+                            >
+                                🗑️
+                            </button>
+                        </app-post-card> -->
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
