@@ -29,8 +29,9 @@ const routes: Route[] = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'movies-details',
+    path: 'movies/:id',
     component: MoviesDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'users',

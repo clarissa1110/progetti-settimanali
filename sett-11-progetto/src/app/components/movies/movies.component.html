@@ -12,30 +12,7 @@
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
               </svg></a>
             </div>
-
-            <!-- <app-post-card [post]="post" class="bg-success">
-                            <button
-                                type="button"
-                                class="btn btn-primary btn-sm"
-                                (click)="disablePost(post.id, i)"
-                            >
-                                DISATTIVA
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-secondary ms-1 btn-sm"
-                                [routerLink]="['/activePosts', post.id]"
-                            >
-                                DETTAGLI
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-primary btn-sm"
-                                (click)="deletePost(post.id, i)"
-                            >
-                                🗑️
-                            </button>
-                        </app-post-card> -->
+            <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/movies', movie.id]">Movie Details</button>
           </div>
         </div>
       </ng-container>

@@ -18,9 +18,9 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   signUp(data: Register) {
-    return this.http.post(`${this.apiURL}register`, data).pipe(
-      catchError(this.errors)
-    )
+    return this.http
+      .post(`${this.apiURL}register`, data)
+      .pipe(catchError(this.errors));
   }
 
   login(data: { email: string; password: string }) {
@@ -52,9 +52,18 @@ export class AuthService {
     }
   }
 
-  logout(){
+  logout() {
     this.authSub.next(null);
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
+  }
+
+  restore() {
+    const userJson = localStorage.getItem('user');
+    if (!userJson) {
+      return;
+    }
+    const user: AuthData = JSON.parse(userJson);
+    this.authSub.next(user);
   }
 }
