@@ -2,16 +2,53 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Register } from '../models/register.interface';
 import { environment } from 'src/environments/environment.development';
-
+import { AuthData } from '../models/auth-data.interface';
+import { BehaviorSubject, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   apiURL = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  private authSub = new BehaviorSubject<AuthData | null>(null);
+  user$ = this.authSub.asObservable();
 
-  signUp(data: Register){
-    return this.http.post(`${this.apiURL}register`, data);
+  constructor(private http: HttpClient) {}
+
+  signUp(data: Register) {
+    return this.http.post(`${this.apiURL}register`, data).pipe(
+      catchError(this.errors)
+    )
+  }
+
+  login(data: { email: string; password: string }) {
+    return this.http.post<AuthData>(`${this.apiURL}login`, data).pipe(
+      tap((data) => {
+        console.log('Auth data: ', data);
+      }),
+      tap((data) => {
+        this.authSub.next(data);
+        localStorage.setItem('user', JSON.stringify(data));
+      }),
+      catchError(this.errors)
+    );
+  }
+
+  private errors(err: any) {
+    switch (err.error) {
+      case 'Email already exists':
+        return throwError('User already exists');
+        break;
+
+      case 'Bad credentials':
+        return throwError('Incorrect username or password');
+        break;
+
+      default:
+        return throwError('Error');
+        break;
+    }
   }
 }
