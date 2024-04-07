@@ -1,27 +1,14 @@
-# Sett11Progetto
+# Progetto settimanale - settimana 11 - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+Al caricamento della pagina viene visualizzata la pagina di accoglienza, dalla quale si può registrare un nuovo utente o accedere all'applicazione. 
+Inizialmente le uniche pagine visibili sulla navbar sono quelle di login e registrazione.
 
-## Development server
+Dopo l'accesso, la navbar presenta le sezioni "Home", "All Movies", "Users" e il menu "Profile". Sulla pagina "All Movies" vengono presentate le card di tutti i film. Cliccando sul titolo si viene reindirizzati sulla pagina che contiene i dettagli del film scelto. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La pagina "Users" mostra le informazioni di tutti gli utenti registrati. 
 
-## Code scaffolding
+Al logout si viene reindirizzati alla pagina di login, il token viene cancellato dal local storage e le altre pagine non sono più accessibili neanche ricercandole manualmente tramite url. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Purtroppo manca la pagina di dettagli dell'utente che ha fatto login, a causa di un problema che non ho saputo risolvere in user-profile.component.ts: richiamando la funzione getUser() dal service, non accetta l'id come parametro, anche se nel service è presente, e quindi non mi è permesso accedere ai dati dell'utente.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Allo stesso modo, manca tutto il meccanismo dei preferiti, perché nonostante molti tentativi non ho capito come far comunicare le informazioni dei film e degli utenti.

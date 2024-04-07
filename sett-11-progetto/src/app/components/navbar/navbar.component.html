@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-black">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active"
+    <a class="navbar-brand text-danger h1 fw-bolder fs-1" [routerLink]="['/']" routerLinkActive="active"
       >EpicFlix</a
     >
     <button
@@ -20,31 +20,31 @@
     >
       <div class="navbar-nav" *ngIf="user">
         <a
-          class="nav-link active"
+          class="nav-link active text-white"
           [routerLink]="['/']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >Home</a
         >
-        <a class="nav-link" [routerLink]="['/movies']" routerLinkActive="active"
+        <a class="nav-link text-white" [routerLink]="['/movies']" routerLinkActive="active"
           >All Movies</a
         >
-        <a class="nav-link" [routerLink]="['/users']" routerLinkActive="active"
+        <a class="nav-link text-white" [routerLink]="['/users']" routerLinkActive="active"
           >Users</a
         >
         <div class="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="btn btn-dark dropdown-toggle me-2"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             Profile
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu bg-dark">
             <li>
               <a
-                class="dropdown-item"
+                class="dropdown-item bg-dark text-white"
                 [routerLink]="['/profile']"
                 routerLinkActive="active"
                 >User details</a
@@ -52,7 +52,7 @@
             </li>
             <li>
               <a
-                class="dropdown-item"
+                class="dropdown-item bg-dark text-white"
                 [routerLink]="['/favourites']"
                 routerLinkActive="active"
                 >Your Favourites</a

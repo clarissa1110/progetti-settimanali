@@ -3,7 +3,6 @@ import { UsersInterface } from '../models/users-interface.interface';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,5 +17,9 @@ export class UsersService {
 
   getUser(id: number){
     return this.http.get<UsersInterface>(`${this.apiUrl}users/${id}`)
+  }
+
+  getLoggedUser(){
+    return localStorage.getItem('user') //e l'id come lo trovo???
   }
 }

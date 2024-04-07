@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MovieInterface } from 'src/app/models/movie-interface.interface';
 import { MoviesService } from 'src/app/services/movies.service';
 import { ActivatedRoute } from '@angular/router';
-import { ParseSourceFile } from '@angular/compiler';
 
 @Component({
   selector: 'app-movies-details',
