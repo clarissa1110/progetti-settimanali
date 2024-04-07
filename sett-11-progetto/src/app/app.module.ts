@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Route, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -14,41 +15,47 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { TokenInterceptor } from './auth/token.interceptor';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Route[] = [
   {
-    path:'', 
-    component: HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path:'movies',
-    component:MoviesComponent
+    path: 'movies',
+    component: MoviesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'movies-details',
-    component: MoviesDetailsComponent
+    component: MoviesDetailsComponent,
   },
   {
     path: 'users',
-    component: UsersListComponent
+    component: UsersListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
-    component: UserProfileComponent
+    component: UserProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'favourites',
-    component: FavouritesComponent
+    component: FavouritesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
-  }
-]
+    component: RegisterComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -61,16 +68,22 @@ const routes: Route[] = [
     UserProfileComponent,
     UsersListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

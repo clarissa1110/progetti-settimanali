@@ -15,7 +15,7 @@ export class AuthService {
   private authSub = new BehaviorSubject<AuthData | null>(null);
   user$ = this.authSub.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   signUp(data: Register) {
     return this.http.post(`${this.apiURL}register`, data).pipe(
@@ -50,5 +50,11 @@ export class AuthService {
         return throwError('Error');
         break;
     }
+  }
+
+  logout(){
+    this.authSub.next(null);
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
   }
 }
