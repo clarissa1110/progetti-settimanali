@@ -11,6 +11,12 @@
       "password": "$2a$10$RsIosJKYgHyT8uo.bosI5uYpN0PVmA6xdnhjT4jIFcbKbVS2RsiRC",
       "name": "Mario Rossi",
       "id": 3
+    },
+    {
+      "email": "mario@bianchi.com",
+      "password": "$2a$10$4175tJA5cqOpC8CeEyamLevlN/vaCDlaWisY3mxnKJFvmBG/rw7FC",
+      "name": "Mario ",
+      "id": 4
     }
   ],
   "favorites": [
